@@ -15,6 +15,5 @@ COPY . .
 
 RUN python manage.py collectstatic --noinput
 
-# Comando padrão caso o Railway não sobrescreva
 CMD ["gunicorn", "core.wsgi", "--bind", "0.0.0.0:8000"]
-#so
+

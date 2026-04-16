@@ -15,5 +15,5 @@ COPY . .
 
 RUN python manage.py collectstatic --noinput
 
-CMD gunicorn core.wsgi --bind 0.0.0.0:$PORT
+CMD python manage.py migrate && gunicorn core.wsgi --bind 0.0.0.0:$PORT
 

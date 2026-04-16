@@ -8,7 +8,7 @@ def health_check(request):
     """
   
     db_ok = True
-    db_message = "Conexão com o Supabase está OK!"
+    db_message = "Conexão com o Supabase está OK! || Conexão com o Railway está OK!"  # Mensagem padrão para indicar que a conexão está funcionando
     
     try:
         with connection.cursor() as cursor:

@@ -1,6 +1,6 @@
 FROM python:3.12-slim
 
-# Evita que o Python gere arquivos .pyc e permite logs em tempo real
+
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 

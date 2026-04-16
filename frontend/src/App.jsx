@@ -7,6 +7,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+   
     api.get('/api/status/')
       .then(response => {
         setStatus(response.data);
@@ -28,8 +29,10 @@ function App() {
       minHeight: '100vh'
     }}>
       <h1 style={{ color: '#2c3e50' }}>TaskFlowPro</h1>
-      <p style={{ color: '#7f8c8d' }}>Validação de Infraestrutura Full Stack </p>
-      <p style={{ color: '#7f8c8d' }}>josé gabriel coelho da cunha </p>
+
+      <p style={{ color: '#7f8c8d' }}>Validação de Infraestrutura Full Stack</p>
+      <p style={{ color: '#7f8c8d' }}>Teste josé gabriel coelho da cunha</p>
+    
       
       <div style={{ 
         marginTop: '30px', 

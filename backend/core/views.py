@@ -6,6 +6,7 @@ def health_check(request):
     """
     Verifica a saúde do sistema e a conexão com o banco de dados. ola!
     """
+  
     db_ok = True
     db_message = "Conexão com o Supabase está OK!"
     

@@ -16,7 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from .views import health_check
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.core_admin_url if hasattr(admin.site, 'core_admin_url') else admin.site.urls),
+    
+    # Rota para verificação que você pediu
+    path('api/status/', health_check, name='health_check'),
+    
+    # Se você quiser que a página inicial também mostre isso por enquanto:
+    path('', health_check), 
 ]

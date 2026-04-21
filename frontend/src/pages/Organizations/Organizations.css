@@ -1,0 +1,43 @@
+.orgs-container {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.orgs-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.org-item {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid #2ecc71;
+}
+
+.org-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.owner-badge {
+    font-size: 0.75rem;
+    background: #f0f2f5;
+    padding: 4px 8px;
+    border-radius: 12px;
+    color: #65676b;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #3498db;
+    text-decoration: none;
+}

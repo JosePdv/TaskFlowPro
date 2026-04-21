@@ -8,7 +8,7 @@ def health_check(request):
     """
   
     db_ok = True
-    db_message = "Conexão com o Supabase está OK! || Conexão com o Railway está OK!"  # Mensagem padrão para indicar que a conexão está funcionando
+    db_message = "Conexão com Banco de Dados OK!"  # Mensagem padrão para indicar que a conexão está funcionando
     
     try:
         with connection.cursor() as cursor:
@@ -18,7 +18,7 @@ def health_check(request):
         db_message = f"Erro ao conectar no banco: {str(e)}"
 
     return JsonResponse({
-        "status": "online",
+        "status": "Online",
         "database": {
             "connected": db_ok,
             "message": db_message

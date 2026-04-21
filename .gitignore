@@ -12,3 +12,4 @@ frontend/.env
 # Docker & OS
 .DS_Store
 postgres_data/
+.venv/

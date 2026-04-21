@@ -38,19 +38,24 @@ ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['127.0.0.1', 'localhost'])
 # Application definition 
 
 INSTALLED_APPS = [
+    'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'corsheaders', # Adicione isso (precisaremos instalar via pip)
+    'corsheaders', # Adicione isso (instalar via pip)
+    'rest_framework',  # Adicione o DRF
+    # Adicione seus apps de domínio/api para as migrations funcionarem
+    'api',
+    'domain',
+
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # Adicione isso para o React conseguir falar com o Django
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware', # Essencial para arquivos estáticos no Railway
-    'corsheaders.middleware.CorsMiddleware', # Adicione isso para o React conseguir falar com o Django
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -58,7 +63,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Configuração de CORS para permitir a Vercel
 # Em produção, você colocará a URL da Vercel aqui
 CORS_ALLOWED_ORIGINS = env.list('CORS_ALLOWED_ORIGINS', default=['http://localhost:5173'])
@@ -131,8 +137,12 @@ USE_TZ = True
 
 # 5. Arquivos Estáticos (Configuração para Railway/WhiteNoise)
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },

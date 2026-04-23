@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 import os
 import environ # Importa o django-environ
 from pathlib import Path
+import dj_database_url
 
 # 1. Inicializa o environ
 env = environ.Env(
@@ -98,7 +99,10 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': env.db('DATABASE_URL', default=f'sqlite:///{BASE_DIR / "db.sqlite3"}')
 }
-
+if 'postgresql' in DATABASES['default']['ENGINE']:
+    DATABASES['default']['OPTIONS'] = {
+        'options': '-c search_path=public,private'
+    }
 
 # Password validation @Gbdlswy0125896320
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators

@@ -15,7 +15,7 @@ export default function VerifyConnection() {
         setStatus(response.data);
         setLoading(false);
       })
-      .catch(err => {
+      .catch(() => {
         setError("Não foi possível conectar ao backend.");
         setLoading(false);
       });

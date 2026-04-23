@@ -11,7 +11,7 @@ const Home = () => {
       </div>
 
       <nav className="home-nav">
-        <Link to="/verify" className="nav-link blue">
+        <Link to="/verify-connection" className="nav-link blue">
           Ver Status da Rede
         </Link>
         <Link to="/organizations" className="nav-link green">

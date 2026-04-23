@@ -4,25 +4,22 @@ import Home from './pages/Home/Home';
 import Organizations from './pages/Organizations/Organizations';
 import VerifyConnection from './pages/VerifyConnection/VerifyConnection';
 import './App.css';
+import AppRoutes from './routes/AppRoutes';
 
 function App() {
   return (
-    <BrowserRouter>
+  
       <div className="app-container">
         <h1 className="app-title">TaskFlowPro</h1>
         <small className="app-subtitle">Full Stack Developer Environment</small>
-
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/verify" element={<VerifyConnection />} />
-          <Route path="/organizations" element={<Organizations />} />
-        </Routes>
-
+        {/* ROTAS DO REACT AQUI */}
+       <AppRoutes />
+       {/*FIM DAS ROTAS DO REACT AQUI */}
         <footer className="app-footer">
            Docker composer project with:Django + React | PostgreSQL | Redis
         </footer>
       </div>
-    </BrowserRouter>
+   
   );
 }
 

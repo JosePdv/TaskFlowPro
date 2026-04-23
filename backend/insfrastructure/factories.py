@@ -35,6 +35,5 @@ class TaskFactory(factory.django.DjangoModelFactory):
 
     project = factory.SubFactory(ProjectFactory)
     title = factory.Faker('sentence', nb_words=4)
-    # Na sua model o padrão é 'todo', e as opções são 'todo', 'doing', 'done'
     status = factory.Iterator(['todo', 'doing', 'done'])
     assigned_to = factory.SubFactory(UserFactory)

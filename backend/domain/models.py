@@ -14,5 +14,5 @@ class Project(models.Model):
 class Task(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='tasks')
     title = models.CharField(max_length=200)
-    status = models.CharField(max_length=20, default='todo') # todo, doing, done
+    status = models.CharField(max_length=20, default='todo')
     assigned_to = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)

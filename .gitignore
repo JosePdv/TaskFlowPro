@@ -2,7 +2,7 @@
 **/__pycache__/
 *.pyc
 backend/venv/
-backend/.env
+.env
 
 # Node
 **/node_modules/
@@ -13,3 +13,4 @@ frontend/.env
 .DS_Store
 postgres_data/
 .venv/
+backend/create_user_temp.py

@@ -1,3 +1,4 @@
+#Equivalente aos Resources do Laravel, transformando modelos em JSON.
 from rest_framework import serializers
 from domain.models import Organization
 

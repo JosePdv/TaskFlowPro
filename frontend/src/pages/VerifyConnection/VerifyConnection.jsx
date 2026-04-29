@@ -47,7 +47,7 @@ export default function VerifyConnection() {
         </div>
       )}
 
-      <Link to="/" className="btn-back">
+      <Link to="/home" className="btn-back">
         ← Voltar para Home
       </Link>
     </div>

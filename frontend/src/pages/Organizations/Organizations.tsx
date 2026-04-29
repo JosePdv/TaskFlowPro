@@ -27,7 +27,7 @@ const Organizations: React.FC = () => {
         </ul>
       )}
       
-      <a href="/" className="back-link">← Voltar</a>
+      <a href="/home" className="back-link">← Voltar</a>
     </div>
   );
 };
